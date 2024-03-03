@@ -6,6 +6,7 @@ module.exports = {
     backgroundImage: {
       hero:
         "url('https://html.creativegigstf.com/vCamp/vCamp/images/assets/bg_01.png')",
+      height: "100vh",  
     },
     extend: {
       animation: {
@@ -37,7 +38,7 @@ module.exports = {
             filter: "blur(2px)",
           },
           "50%": {
-            transform: "translate(20px, -20px) scale(1.1)",
+            transform: "translate(20px, -20px) scale(1)",
             filter: "blur(0px)",
           },
           "100%": {

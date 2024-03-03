@@ -1,0 +1,44 @@
+// YourComponent.module.scss
+
+$mobile-breakpoint: 768px;
+
+// Default styles for h3
+h3 {
+  &.coming-soon {
+    font-weight: light; // or use a specific value like 300
+    font-size: 1.5rem; // Adjust the size as needed
+    text-transform: uppercase;
+    letter-spacing: 0.1em; // Adjust the spacing as needed
+  }
+}
+
+// Media query for mobile
+@media screen and (max-width: $mobile-breakpoint) {
+  h3.coming-soon {
+    // Adjust styles for smaller screens
+    font-size: 1rem;
+  }
+}
+
+h1 {
+    &.blowing-up {
+      font-size: 5rem; // Adjust the size as needed
+      font-weight: bold; // or use a specific value like 700
+    }
+  }
+  
+  // Media query for mobile
+  @media screen and (max-width: $mobile-breakpoint) {
+    h1.blowing-up {
+      // Adjust styles for smaller screens
+      font-size: 3rem;
+    }
+  }
+  
+  // Media query for larger screens (e.g., tablets and desktops)
+  @media screen and (min-width: $mobile-breakpoint + 1) {
+    h1.blowing-up {
+      // Adjust styles for larger screens
+      font-size: 6rem;
+    }
+  }
