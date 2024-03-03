@@ -1,113 +1,127 @@
 import Link from "next/link";
 import Layout from "../components/Layout";
-import emailjs from 'emailjs-com';
-import React, { useState } from 'react';
-
+import emailjs from "@emailjs/browser";
+import React, { useRef, useState } from "react";
 
 const IndexPage = () => {
-  const [email, setEmail] = useState('');
-  const sendEmail = () => {
-    emailjs.send(
-      'service_xnfcge7',
-      'service_xnfcge7',
-      { to_email: email },
-      'techon_pixel'
-    )
-    .then((response) => {
-      console.log('Email sent successfully:', response);
-    })
-    .catch((error) => {
-      console.error('Error sending email:', error);
-    });
+  const [email, setEmail] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .send(
+        "service_xnfcge7",
+        "template_f87cgyv",
+        {
+          from_name: email,
+        },
+        {
+          publicKey: "plPXNMOhkUndCRYkT",
+        }
+      )
+      .then((response) => {
+        console.log("Email sent successfully:", response);
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
   };
+
   return (
-  <Layout title="Techon Pixel Coming Soon">
-    {/* Optimize images */}
-    <img
-      src="/images/xera.svg"
-      alt="Techon Pixel"
-      className="absolute h-96 -top-20 -right-16 lg:right-5 lg:top-10 "
-    />
-    <img
-      src="/images/shapes.svg"
-      alt="Hero"
-      className="absolute left-24 bottom-24 animate-blob2"
-    />
-    {/* Improve HTML semantics */}
-    <div className="relative z-10 py-6 space-y-16 lg:space-y-32 text-gray-900">
-      <div className="text-center space-y-10">
-        <h3 className="font-light text-xl uppercase tracking-wider coming-soon">
-          Coming soon
-        </h3>
-        <h1 className="text-7xl lg:text-9xl font-extrabold blowing-up">
-          We’re blowing up
-        </h1>
-        <p className="text-xl lg:text-2xl tracking-wide mx-10 lg:max-w-xl lg:mx-auto">
-          We're under construction. Check back for an update soon. Stay in
-          touch!
-        </p>
+    <Layout title="Techon Pixel Coming Soon">
+      {/* Optimize images */}
+      <img
+        src="/images/xera.svg"
+        alt="Techon Pixel"
+        className="absolute h-96 -top-20 -right-16 lg:right-5 lg:top-10 "
+      />
+      <img
+        src="/images/shapes.svg"
+        alt="Hero"
+        className="absolute left-24 bottom-24 animate-blob2"
+      />
+      {/* Improve HTML semantics */}
+      <div className="relative z-10 py-6 space-y-16 lg:space-y-32 text-gray-900">
+        <div className="text-center space-y-10">
+          <h3 className="font-light text-xl uppercase tracking-wider coming-soon">
+            Coming soon
+          </h3>
+          <h1 className="text-7xl lg:text-9xl font-extrabold blowing-up">
+            We’re blowing up
+          </h1>
+          <p className="text-xl lg:text-2xl tracking-wide mx-10 lg:max-w-xl lg:mx-auto">
+            We're under construction. Check back for an update soon. Stay in
+            touch!
+          </p>
+        </div>
+        {/* Use functional components */}
+        <form
+          className="relative z-10 mx-10 lg:max-w-xl lg:mx-auto"
+          onSubmit={sendEmail}
+        >
+          <input
+            placeholder="hi@gmail.com"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full text-2xl font-light text-gray-900 placeholder-gray-500 py-5 pl-5 pr-36 lg:pr-44 rounded-xl"
+          />
+          <button
+            type="submit"
+            className="absolute top-1 right-1 bottom-1 px-4 lg:px-10 text-xl font-semibold bg-gray-900 text-white rounded-xl transition ease-in-out duration-500 hover:bg-red-500"
+          >
+            Notify me
+          </button>
+        </form>
       </div>
-      {/* Use functional components */}
-      <form className="relative z-10 mx-10 lg:max-w-xl lg:mx-auto" onSubmit={sendEmail}>
-        <input
-          type="text"
-          placeholder="hi@gmail.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full text-2xl font-light text-gray-900 placeholder-gray-500 py-5 pl-5 pr-36 lg:pr-44 rounded-xl"
-        />
-        <button className="absolute top-1 right-1 bottom-1 px-4 lg:px-10 text-xl font-semibold bg-gray-900 text-white rounded-xl transition ease-in-out duration-500 hover:bg-red-500">
-          Notify me
-        </button>
-      </form>
-    </div>
-    {/* Improve accessibility */}
-    <div className="absolute bottom-5">
-      <ul className="flex space-x-3">
-        {/* Use external SVG files or React components for icons */}
-        <li>
-          <Link href="https://www.google.com/">
-            <a
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
-              target="_blank"
-            >
-              <FacebookIcon />
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="https://www.google.com/">
-            <a
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
-              target="_blank"
-            >
-              <TwitterIcon />
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="https://www.google.com/">
-            <a
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
-              target="_blank"
-            >
-              <InstagramIcon />
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="https://www.google.com/">
-            <a
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
-              target="_blank"
-            >
-              <LinkedInIcon />
-            </a>
-          </Link>
-        </li>
-      </ul>
-    </div>
-  </Layout>)
+      {/* Improve accessibility */}
+      <div className="absolute bottom-5">
+        <ul className="flex space-x-3">
+          {/* Use external SVG files or React components for icons */}
+          <li>
+            <Link href="https://www.google.com/">
+              <a
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
+                target="_blank"
+              >
+                <FacebookIcon />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://www.google.com/">
+              <a
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
+                target="_blank"
+              >
+                <TwitterIcon />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://www.google.com/">
+              <a
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
+                target="_blank"
+              >
+                <InstagramIcon />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="https://www.google.com/">
+              <a
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
+                target="_blank"
+              >
+                <LinkedInIcon />
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </Layout>
+  );
 };
 
 // Separate functional components for icons
