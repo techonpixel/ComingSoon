@@ -81,7 +81,7 @@ const IndexPage = () => {
         <ul className="flex space-x-3">
           {/* Use external SVG files or React components for icons */}
           <li>
-            <Link href="https://www.google.com/">
+            <Link href="https://www.facebook.com/profile.php?id=61556644120445">
               <a
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
                 target="_blank"
@@ -91,7 +91,7 @@ const IndexPage = () => {
             </Link>
           </li>
           <li>
-            <Link href="https://www.google.com/">
+            <Link href="https://twitter.com/techonpixel">
               <a
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
                 target="_blank"
@@ -101,7 +101,7 @@ const IndexPage = () => {
             </Link>
           </li>
           <li>
-            <Link href="https://www.google.com/">
+            <Link href="https://www.instagram.com/techonpixel/">
               <a
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
                 target="_blank"
@@ -110,7 +110,7 @@ const IndexPage = () => {
               </a>
             </Link>
           </li>
-          <li>
+{/*           <li>
             <Link href="https://www.google.com/">
               <a
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
@@ -119,7 +119,7 @@ const IndexPage = () => {
                 <LinkedInIcon />
               </a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </Layout>
