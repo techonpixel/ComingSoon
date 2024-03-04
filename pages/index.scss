@@ -12,14 +12,6 @@ h3 {
   }
 }
 
-// Media query for mobile
-@media screen and (max-width: $mobile-breakpoint) {
-  h3.coming-soon {
-    // Adjust styles for smaller screens
-    font-size: 1rem;
-  }
-}
-
 h1 {
   &.blowing-up {
     font-size: 5rem; // Adjust the size as needed
@@ -29,6 +21,11 @@ h1 {
 
 // Media query for mobile
 @media screen and (max-width: $mobile-breakpoint) {
+  h3.coming-soon {
+    // Adjust styles for smaller screens
+    font-size: 1rem;
+  }
+
   h1.blowing-up {
     // Adjust styles for smaller screens
     font-size: 3rem;
