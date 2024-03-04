@@ -110,8 +110,8 @@ const IndexPage = () => {
               </a>
             </Link>
           </li>
-{/*           <li>
-            <Link href="https://www.google.com/">
+          <li>
+            <Link href="https://www.linkedin.com/in/techon-pixel-aa42882b7/ ">
               <a
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 transition ease-in-out duration-500 hover:bg-red-500 hover:text-white hover:shadow-lg"
                 target="_blank"
@@ -119,7 +119,7 @@ const IndexPage = () => {
                 <LinkedInIcon />
               </a>
             </Link>
-          </li> */}
+          </li>
         </ul>
       </div>
     </Layout>
