@@ -4,6 +4,8 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import emailjs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 const IndexPage = () => {
   const [email, setEmail] = useState("");
@@ -23,14 +25,18 @@ const IndexPage = () => {
       )
       .then((response) => {
         console.log("Email sent successfully:", response);
+        NotificationManager.success('Notification sent successfully');
+        setEmail('')
       })
       .catch((error) => {
         console.error("Error sending email:", error);
+        NotificationManager.error('Error in sending notification');
       });
   };
 
   return (
     <Layout title="Techon Pixel Coming Soon">
+       <NotificationContainer/>
       {/* Optimize images */}
       <img
         src="/images/xera.svg"
