@@ -17,6 +17,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <link rel="icon" href="/images/favicon.ico" sizes="any" style={{borderRadius: '50%'}}/>
       <meta property="og:title" content={`${title}`} />
       <meta property="og:type" content="website" />
+      <meta name="facebook-domain-verification" content="re9rzvfuq8dvuqgxvz5muscygs8rfy" />
     </Head>
     {children}
   </div>
